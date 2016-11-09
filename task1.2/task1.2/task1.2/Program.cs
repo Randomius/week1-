@@ -85,9 +85,12 @@ namespace task1._2
             students[9].FormOfEducation = "Daily";
             students[9].Course = 1;
 
-
-            
-
+            foreach(Student student in students)
+            {
+                student.output();
+            }
+            Console.WriteLine("Press <Enter> to exit... ");
+            while (Console.ReadKey().Key != ConsoleKey.Enter) { }
 
 
         }
@@ -109,13 +112,11 @@ namespace task1._2
 
            public void output()
             {
-                foreach (Student student in students)
-                {
-                    Console.WriteLine("Name:'{0}',2ndName:'{1},Age:'{2}', Faculty:'{3}',FOE:'{4}',couse:'{5}'", student.FirstName, student.SecondName, student.Age);
 
-                }
-
+                Console.WriteLine("Name:'{0}',2ndName:'{1},Age:'{2}', Faculty:'{3}',FOE:'{4}',couse:'{5}'", FirstName, SecondName, Age, Faculty, FormOfEducation, Course);
             }
+
+            
         }
     }
 }
