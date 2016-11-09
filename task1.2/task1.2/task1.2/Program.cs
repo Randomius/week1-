@@ -8,9 +8,10 @@ namespace task1._2
 {
     class Program
     {
-
+        
         static void Main(string[] args)
         {
+            
             //create array of sruct
             Student[] students = new Student[10];
             //fill array
@@ -94,7 +95,7 @@ namespace task1._2
         
 
 
-
+        
         public struct Student//create struct
         {
             public string FirstName;
@@ -106,15 +107,15 @@ namespace task1._2
 
             //int i;
 
-          /*  public void output(Student students)
+           public void output()
             {
-                foreach [Student in students]
+                foreach (Student student in students)
                 {
-                    Console.WriteLine("Name:'{0}',2ndName:'{1},Age:'{2}', Faculty:'{3}',FOE:'{4}',couse:'{5}'", students[i].FirstName);
+                    Console.WriteLine("Name:'{0}',2ndName:'{1},Age:'{2}', Faculty:'{3}',FOE:'{4}',couse:'{5}'", student.FirstName, student.SecondName, student.Age);
 
                 }
 
-            }*/
+            }
         }
     }
 }
