@@ -11,6 +11,7 @@ namespace task1._2
         
         static void Main(string[] args)
         {
+            Student[] temp = new Student[1];
             
             //create array of sruct
             Student[] students = new Student[10];
@@ -85,20 +86,34 @@ namespace task1._2
             students[9].FormOfEducation = "Daily";
             students[9].Course = 1;
 
-            foreach(Student student in students)
+            //Array.Sort(students, new Comparison<Student>((a, b) => a.FirstName.CompareTo(b.FirstName)));//sort with Array.Sort
+
+            for (int i = 0; i < students.Length; i++)
             {
-                student.output();
+                for (int j = i; j < students.Length - 1; j++)
+                {
+                    if (students[i].Age < students[j].Age)
+                    {
+                        temp[0] = students[j];
+                        students[j] = students[i];
+                        students[i] = temp[0];                                             
+                    }
+
+                }
             }
+            
+            
+                
+            foreach (Student student in students)
+                {
+                     student.output();
+                }
+            
             Console.WriteLine("Press <Enter> to exit... ");
             while (Console.ReadKey().Key != ConsoleKey.Enter) { }
-
-
+            
         }
 
-        
-
-
-        
         public struct Student//create struct
         {
             public string FirstName;
@@ -108,14 +123,12 @@ namespace task1._2
             public string FormOfEducation;
             public int Course;
 
-            //int i;
+            
 
            public void output()
             {
-
                 Console.WriteLine("Name:'{0}',2ndName:'{1},Age:'{2}', Faculty:'{3}',FOE:'{4}',couse:'{5}'", FirstName, SecondName, Age, Faculty, FormOfEducation, Course);
             }
-
             
         }
     }
